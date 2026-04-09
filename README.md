@@ -20,9 +20,9 @@ A security system that detects and blocks brute force login attacks in real time
 BFDetection/
 ├── db_connection.py        # Oracle DB connection handler
 ├── detect_attempts.py      # Core detection logic (logging, locking, blocking)
-├── interface_test.py       # Login interface (simulates a real login form)
+├── interface.py       # Login interface (simulates a real login form)
 ├── interface_rapport.py    # Admin dashboard (reports, unlock accounts, unblock IPs)
-├── test.py                 # Brute force attack simulator (for testing only)
+├── main.py                 # Brute force attack simulator (for testing only)
 └── README.md
 ```
 
@@ -70,7 +70,7 @@ CREATE TABLE Blocked_IP (
 - `check_and_block_ip()` — blocks the IP if more than 10 failed attempts in 2 minutes
 - `get_client_ip()` — retrieves the machine's local IP address
 
-### 3. Login Interface (`interface_test.py`)
+### 3. Login Interface (`interface.py`)
 
 A Tkinter form that:
 - Checks if the IP is blocked before allowing any attempt
@@ -84,7 +84,7 @@ A tabbed Tkinter window showing:
 - **Failed Attempts** — ranked by number of failures per username
 - **Blocked IPs** — with an Unblock button
 
-### 5. Brute Force Simulator (`test.py`)
+### 5. Brute Force Simulator (`main.py`)
 
 Tests the system by generating password combinations from a dictionary and firing login attempts, triggering the account lock and IP block mechanisms automatically.
 
@@ -121,7 +121,7 @@ connection = connect_to_db(dsn="localhost:1521/xepdb1", username="YOUR_USER", pa
 
 **3. Run the login interface:**
 ```bash
-python interface_test.py
+python interface.py
 ```
 
 **4. Run the admin dashboard:**
@@ -131,7 +131,7 @@ python interface_rapport.py
 
 **5. Run the brute force simulator (for testing only):**
 ```bash
-python test.py
+python main.py
 ```
 
 ---
