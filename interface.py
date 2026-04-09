@@ -1,8 +1,7 @@
 import tkinter as tk
 from tkinter import messagebox
 from db_connection import connect_to_db
-from detect_attempts import detect_login_attempt,check_credentials,check_and_lock_account,check_and_block_ip,get_client_ip  # Assuming this file has the detection logic
-
+from detect_attempts import detect_login_attempt, check_credentials, check_and_lock_account, check_and_block_ip, get_client_ip
 def handle_login():
     """
     Handles the login attempt by capturing user input and providing detailed feedback.

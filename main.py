@@ -2,7 +2,6 @@ import tkinter as tk
 import itertools
 import secrets
 from detect_attempts import detect_login_attempt, check_and_block_ip, check_and_lock_account, get_client_ip, connect_to_db
-
 # Define a sample dictionary for passwords
 password_dictionary = [
     "123456", "password", "admin", "qwerty", "letmein",
